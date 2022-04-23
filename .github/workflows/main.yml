@@ -41,7 +41,7 @@ jobs:
         flake8 --count --statistics --show-source
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --extend-exclude=""
     - name: Test with pytest
-      run: python -m pytest
+      run: pytest
 
   deploy:     
     runs-on: ubuntu-latest
