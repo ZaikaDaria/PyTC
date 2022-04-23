@@ -49,7 +49,7 @@ coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
-020_for_git/.pytest_cache/
+.pytest_cache/
 
 # Translations
 *.mo
