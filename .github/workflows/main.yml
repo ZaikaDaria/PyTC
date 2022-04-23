@@ -17,7 +17,7 @@ on:
 
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -30,7 +30,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   
   tests:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Install dependencies for testing
       run: |
@@ -46,7 +46,7 @@ jobs:
         python -m pytest
 
 deploy:     
-  run-on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
     name: Generate deployment package
     run: zip -r {{env.DEPLOY_PACKAGE_NAME }}.zip ./ -x *.git
