@@ -34,7 +34,7 @@ jobs:
     steps:
     - name: Install dependencies for testing
       run: |
-        if [ -f requirements-test.txt ]; then pip install -r requirements-test.txt; fi
+        pip install -r requirements.txt
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -42,7 +42,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --extend-exclude=""
     - name: Test with pytest
       run: | 
-        pip install pytest 
         pytest
 
   deploy:     
