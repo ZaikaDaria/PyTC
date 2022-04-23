@@ -19,37 +19,37 @@ jobs:
   flake8:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v1
-      run: python -m pip install --upgrade pip
-      run: pip install flake8
+      - uses: actions/checkout@v2
+      - run: python -m pip install --upgrade pip
+      - run: pip install flake8
       name: Lint with flake8
-      run: flake8
+      - run: flake8
       
   pytest:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v1
-      run: pacman --noconfirm -Syu python python-pip
-      run: python -m pip install --upgrade pip
-      run: pip install pytest
-      run: python -m pytest
+      - uses: actions/checkout@v1
+      - run: pacman --noconfirm -Syu python python-pip
+      - run: python -m pip install --upgrade pip
+      - run: pip install pytest
+      - run: python -m pytest
     
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      - uses: actions/setup-python@v1
       with:
         python-version: "3.9"
       name: Install dependencies
-      run: python -m pip install --upgrade pip
+      - run: python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   
       name: Generate deployment package
-      run: zip -r {{env.DEPLOY_PACKAGE_NAME }}.zip ./ -x *.git
+      - run: zip -r {{env.DEPLOY_PACKAGE_NAME }}.zip ./ -x *.git
       name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v20
+      - uses: einaregilsson/beanstalk-deploy@v20
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
