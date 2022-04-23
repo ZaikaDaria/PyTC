@@ -1,7 +1,6 @@
 Flask
 requests==2.27.1
-pytest-flake8
 Werkzeug==0.16.1
 flake8
-pytest-flask
+pytest
 gunicorn
