@@ -1,0 +1,45 @@
+body {
+display: block;
+margin: 5% 20% 10% 20%;
+background-color: MediumSeaGreen;
+text-align: center;
+}
+
+.answer {
+text-align: center;
+font-size: 140px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20%;
+font-family: cursive;
+background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+color: transparent;
+}
+
+form {
+text-align: center;
+}
+
+.form-text {
+color: black;
+}
+
+
+a:link, a:visited {
+  background-color: pink;
+  color: black;
+  font-family: cursive;
+  padding: 15px 25px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  margin: auto;
+}
+
+a:hover, a:active {
+  font-family: cursive;
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+}
