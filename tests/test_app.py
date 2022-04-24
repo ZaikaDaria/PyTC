@@ -9,7 +9,8 @@ def client():
 
 
 def test_homepage(client):
-    assert client.get('/').status_code == 200
+    response = client.get("/")
+    assert response.status_code == 200
 
 
 def test_greet(client):
