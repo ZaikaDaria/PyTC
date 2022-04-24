@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone repo
-        run: actions/checkout@v2
+        run: actions/checkout@master
 #       - name: Install zip
 #         run: sudo apt-get install zip gzip tar
       - name: Generate deployment package
