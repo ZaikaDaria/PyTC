@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate deployment package
-        run: zip -r {{env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+        run: zip -r deploy.zip . -x '*.git*'
 #       - name: Deploy to EB
 #         uses: einaregilsson/beanstalk-deploy@v20
 #         with:
