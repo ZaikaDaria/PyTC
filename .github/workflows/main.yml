@@ -55,9 +55,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install zip
-        uses: montudor/action-zip@v0.1.0
+        run: sudo apt-get install zip gzip tar
       - name: Generate deployment package
-        run: zip -r deploy.zip ./ -x '*.git*'
+        run: sudo zip -r deploy.zip ./ -x '*.git*'
 #       - name: Deploy to EB
 #         uses: einaregilsson/beanstalk-deploy@v20
 #         with:
