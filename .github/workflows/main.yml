@@ -3,11 +3,11 @@
 name: CI/CD
 
 env:
-  EB_PACKAGE_S3_BUCKET_NAME: 'my-flask-application-packages'
-  EB_APPLICATION_NAME: 'Myflaskapp'
-  EB_ENVIROMENT_NAME: 'Myflaskapp-env'
-  DEPLOY_PACKAGE_NAME: 'flask_app_${{ github.sha }}.zip'
-  AWS_REGION_NAME: 'eu-central-1'
+  EB_PACKAGE_S3_BUCKET_NAME: "my-flask-application-packages"
+  EB_APPLICATION_NAME: "Myflaskapp"
+  EB_ENVIROMENT_NAME: "Myflaskapp-env"
+  DEPLOY_PACKAGE_NAME: "flask_app_${{ github.sha }}.zip"
+  AWS_REGION_NAME: "eu-central-1"
 
 on:
   push:
@@ -54,10 +54,12 @@ jobs:
   deploy:     
     runs-on: ubuntu-latest
     steps:
-      - name: Install zip
-        run: sudo apt-get install zip gzip tar
+      - name: Git clone repo
+        run: actions/checkout@v1
+#       - name: Install zip
+#         run: sudo apt-get install zip gzip tar
       - name: Generate deployment package
-        run: sudo zip -r deploy.zip ./ -x '*.git*'
+        run: zip -r {{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
 #       - name: Deploy to EB
 #         uses: einaregilsson/beanstalk-deploy@v20
 #         with:
