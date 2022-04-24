@@ -72,13 +72,6 @@ jobs:
       - name: Print nice message on success finish
         run: echo "CI part finished successfuly"
         
-      - name: Configure my AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id    :  ${{ secrets.MY_AWS_ACCESS_KEY }}
-          aws-secret-access-key:  ${{ secrets.MY_AWS_SECRET_KEY }}
-          aws-region           :  ${{ env.AWS_REGION_NAME }}
-
       - name: Create new ElasticBeanstalk Application Version
         run : |
           aws elasticbeanstalk create-application-version \
