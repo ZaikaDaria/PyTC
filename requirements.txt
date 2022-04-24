@@ -1,7 +1,6 @@
-Flask==2.1.0
+Flask
 requests
 flake8
 pytest
 gunicorn
 Werkzeug==0.16.0
-MarkupSafe==2.0.1
