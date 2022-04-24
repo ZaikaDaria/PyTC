@@ -1,6 +1,6 @@
-Flask==2.1.1
-requests==2.27.1
+Flask
+requests
 flake8
-pytest==7.1.2
+pytest
 gunicorn
 Werkzeug==0.16.0
